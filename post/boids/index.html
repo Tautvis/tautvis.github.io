@@ -63,6 +63,12 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
+<link rel="stylesheet" href="TemplateData/style.css">
+<script src="TemplateData/UnityProgress.js"></script>
+<script src="Build/UnityLoader.js"></script>
+<script>
+  var unityInstance = UnityLoader.instantiate("unityContainer", "Build/build.json", {onProgress: UnityProgress});
+</script>
 </head>
 
 
@@ -218,8 +224,21 @@ if (!doNotTrack) {
           <div class="entry-content">
             <article>
               <p><a href="https://en.wikipedia.org/wiki/Boids">Boids on Wiki</a>.</p>
+                <div class="webgl-content">
+                    <div id="unityContainer" style="width: 960px; height: 600px"></div>
+                    <div class="footer">
+                        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+                    </div>
+                </div>
+
 
             </article>
+              <div class="webgl-content">
+                  <div id="unityContainer" style="width: 960px; height: 600px"></div>
+                  <div class="footer">
+                      <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+                  </div>
+              </div>
           </div>
           
       <div class='entry-meta-bottom'>
