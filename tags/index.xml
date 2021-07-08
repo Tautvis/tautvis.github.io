@@ -2,13 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Tautvydas Misiunas</title>
-    <link>https://www.tmisiunas.com/tags/</link>
+    <link>https://tautvydas.misiunas.com/tags/</link>
     <description>Recent content in Tags on Tautvydas Misiunas</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://www.tmisiunas.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://tautvydas.misiunas.com/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
