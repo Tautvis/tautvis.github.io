@@ -6,14 +6,25 @@
     <description>Recent content in Posts on Tautvydas Misiunas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tautvydas.misiunas.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tautvydas.misiunas.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Evolution Simulation</title>
+      <link>https://tautvydas.misiunas.com/post/evosim/</link>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://tautvydas.misiunas.com/post/evosim/</guid>
+      <description>This is an early stage prototype for simulation of evolution.
+Image courtesy of wikipedia.</description>
+    </item>
+    
     <item>
       <title>Boid simulation</title>
       <link>https://tautvydas.misiunas.com/post/boids/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://tautvydas.misiunas.com/post/boids/</guid>
-      <description>Boids on Wiki.</description>
+      <description>Boids on Wiki.
+Image courtesy of wikipedia.</description>
     </item>
     
     <item>
