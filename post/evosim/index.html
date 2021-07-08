@@ -13,7 +13,7 @@
         "articleSection" : "post",
         "name" : "Evolution Simulation",
         "headline" : "Evolution Simulation",
-        "description" : "This is an early stage prototype for simulation of evolution.\nImage courtesy of wikipedia.",
+        "description" : "This is an early stage prototype for simulation of evolution.\nImage courtesy of wikipedia.\nThis content does not resize on smaller browser widths. Try using the fullscreen button below (after loading the game).  Unity WebGL builds are not supported on mobile devices.   start loading     EvoSim v0.1   var buildUrl = \u0022\/Build\u0022; var loaderUrl = buildUrl \u002b \u0022\/web_app.loader.js\u0022; var config = { dataUrl: buildUrl \u002b \u0022",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -24,7 +24,7 @@
         "datePublished": "2021-07-01 00:00:00 \u002b0000 UTC",
         "dateModified" : "2021-07-01 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/tautvydas.misiunas.com\/post\/evosim\/",
-        "wordCount" : "14",
+        "wordCount" : "185",
         "image" : "https://tautvydas.misiunas.com/evosim.jpg"",
         "keywords" : [ "Blog" ]   
     }
@@ -45,9 +45,9 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<link href="https://tautvydas.misiunas.com/css/style.css?v=1625785658" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="https://tautvydas.misiunas.com/css/style.css?v=1625788425" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 
-<link href="https://tautvydas.misiunas.com/css/custom.css?v=1625785658" rel="stylesheet" type='text/css' media='all'>
+<link href="https://tautvydas.misiunas.com/css/custom.css?v=1625788425" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="https://tautvydas.misiunas.com/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://tautvydas.misiunas.com/img/favicon.ico" type="image/x-icon">
 
@@ -62,11 +62,6 @@ if (!doNotTrack) {
 }
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
-
-<link rel="shortcut icon" href="TemplateData/favicon.ico">
-<link rel="stylesheet" href="TemplateData/style.css">
-<script src="Build/UnityLoader.js"></script>
-
 
 </head>
 
@@ -223,124 +218,88 @@ if (!doNotTrack) {
         <div class='entry-header'>
           <h1 class='entry-title'> Evolution Simulation</h1>
         </div>
-        <div class="entry-container" style="height: 800px;">
+        <div class="entry-container">
           <div class="entry-content">
             <article>
               <p>This is an early stage prototype for simulation of evolution.</p>
 <p>Image courtesy of <a href="https://en.wikipedia.org/wiki/File:Evolution-des-wissens.jpg">wikipedia</a>.</p>
-            
+<div class="webgl-player">
+	<div id="-unity-browser-width-warning" class="unity-browser-width-warning">
+		This content does not resize on smaller browser widths. Try using the fullscreen button below (after loading the game).
+	</div>
+	<div id="-unity-mobile-warning" class="unity-mobile-warning">
+		Unity WebGL builds are not supported on mobile devices.
+	</div>
+	<div id="-unity-container" class="unity-container unity-desktop" style="width: 1024px;">
+		<canvas id="-unity-canvas" class="unity-canvas" width=1024 height=576></canvas>
+		<button id="-unity-load-button" class="unity-load-button">start loading</button>
+		<div id="-unity-loading-bar" class="unity-loading-bar">
+			<div id="-unity-progress-bar-empty" class="unity-progress-bar-empty">
+				<div id="-unity-progress-bar-full" class="unity-progress-bar-full"></div>
+			</div>
+		</div>
+		<div id="-unity-footer" class="unity-footer">
+			<div id="-unity-fullscreen-button" class="unity-fullscreen-button"></div>
+			<div id="-unity-game-title" class="unity-game-title">EvoSim v0.1</div>
+		</div>
+		<script>
+			var buildUrl = "/Build";
+			var loaderUrl = buildUrl + "/web_app.loader.js";
+			var config = {
+				dataUrl: buildUrl + "/web_app.data",
+				frameworkUrl: buildUrl + "/web_app.framework.js",
+				codeUrl: buildUrl + "/web_app.wasm",
+				streamingAssetsUrl: "StreamingAssets",
+			};
 
-                
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">evosim</div>
-      </div>
-    </div>
-    <script>
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      var warningBanner = document.querySelector("#unity-warning");
+			var container = document.querySelector("#-unity-container");
+			var canvas = document.querySelector("#-unity-canvas");
+			var loadButton = document.querySelector("#-unity-load-button");
+			var loadingBar = document.querySelector("#-unity-loading-bar");
+			var progressBarFull = document.querySelector("#-unity-progress-bar-full");
+			var fullscreenButton = document.querySelector("#-unity-fullscreen-button");
+			var mobileWarning = document.querySelector("#-unity-mobile-warning");
 
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        }
-        updateBannerVisibility();
-      }
+			
+			
+			
+			
+			
+			
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/web_app.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/web_app.data",
-        frameworkUrl: buildUrl + "/web_app.framework.js",
-        codeUrl: buildUrl + "/web_app.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "evosim",
-        productVersion: "0.1",
-        showBanner: unityShowBanner,
-      };
+			if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+				mobileWarning.style.display = "block";
+			} else {
+				mobileWarning.style.display = "none";
+			}
+			canvas.style.width = "1024px";
+			canvas.style.height = "576px";
+			loadingBar.style.display = "none";
 
-      // By default Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
-
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        container.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
-        canvas.style.width = window.innerWidth + 'px';
-        canvas.style.height = window.innerHeight + 'px';
-
-        unityShowBanner('WebGL builds are not supported on mobile devices.');
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
-
-      loadingBar.style.display = "block";
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
-    </script>
-
+			var script = document.createElement("script");
+			script.src = loaderUrl;
+			loadButton.addEventListener("click", function () {
+				createUnityInstance(canvas, config, (progress) => {
+					progressBarFull.style.width = 100 * progress + "%";
+				}).then((unityInstance) => {
+					loadingBar.style.display = "none";
+					loadButton.style.display = "none";
+					loadButton.disabled = true;
+					fullscreenButton.onclick = () => {
+						unityInstance.SetFullscreen(1);
+					};
+				}).catch((message) => {
+					alert(message);
+				});
+			});
+			loadButton.addEventListener("click", function () {
+				loadButton.disabled = true;
+				loadingBar.style.display = "block";
+			});
+			document.body.appendChild(script);
+		</script>
+	</div>
+</div>
 
             </article>
           </div>
@@ -497,7 +456,7 @@ title="github icon"></i>
   </div>
   <script src="https://tautvydas.misiunas.com/js/jquery.min.js"></script>
 <script src="https://tautvydas.misiunas.com/js/jquerymigrate.js"></script>
-<script src="https://tautvydas.misiunas.com/js/production.min.js?v=1625785658"></script>
+<script src="https://tautvydas.misiunas.com/js/production.min.js?v=1625788425"></script>
 
 </body>
 </html>
