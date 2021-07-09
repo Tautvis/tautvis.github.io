@@ -15,7 +15,7 @@
       <guid>https://tautvydas.misiunas.com/post/evosim/</guid>
       <description>This is an early stage prototype for simulation of evolution.
 Image courtesy of wikipedia.
-This content does not resize on smaller browser widths. Try using the fullscreen button below (after loading the game).  Unity WebGL builds are not supported on mobile devices.   start loading     EvoSim v0.1   var buildUrl = &#34;/Build&#34;; var loaderUrl = buildUrl + &#34;/web_app.loader.js&#34;; var config = { dataUrl: buildUrl + &#34;</description>
+This content does not resize on smaller browser widths. Try using the fullscreen button below (after loading the game).  Unity WebGL builds are not supported on mobile devices.   start loading     EvoSim v0.1   var buildUrl = &#34;Build&#34;; var loaderUrl = buildUrl + &#34;/web_app.loader.js&#34;; var config = { dataUrl: buildUrl + &#34;</description>
     </item>
     
     <item>
